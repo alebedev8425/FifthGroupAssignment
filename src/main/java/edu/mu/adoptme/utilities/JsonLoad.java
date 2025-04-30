@@ -40,8 +40,6 @@ public class JsonLoad {
 		        pet = new Rabbit(petData.id, petData.name, petData.age, petData.species, petData.adopted);
 		    }
 
-		
-		
 		if(pet != null) { 
 			pets.add(pet); 
 			}

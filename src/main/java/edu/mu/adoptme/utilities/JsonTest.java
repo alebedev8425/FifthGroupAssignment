@@ -10,8 +10,10 @@ public class JsonTest {
 		  List<Pet> pets = JsonLoad.loadPets();
 
 	        for (Pet pet : pets) {
-	            System.out.println(pet);  // Calls Pet's toString()
+	            System.out.println(pet);  
 	        }
+	        
+	        JsonSave.savePets(pets);
 	    }
 
 	}
