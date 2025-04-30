@@ -11,6 +11,28 @@ public abstract class Pet implements Comparable<Pet> {
 	private boolean adopted; 
 	
 	/**
+	 * Constructor for pet
+	 * @param id
+	 * @param name
+	 * @param age
+	 * @param species
+	 */
+	public Pet(int id, String name, int age, String species) {
+	    this.id = id;
+	    this.name = name;
+	    this.age = age;
+	    this.species = species;
+	    this.adopted = false; 
+	}
+	
+	
+	public Pet() {
+		// TODO Auto-generated constructor stub
+	}
+
+	
+
+	/**
 	 * Getter and Setter for id field 
 	 * @return int id 
 	 */
@@ -88,10 +110,10 @@ public abstract class Pet implements Comparable<Pet> {
 	@Override
 	public String toString() {
 	    return "ID: " + id +
-	           " Name: " + name +
-	           " Species: " + species +
-	           " Age: " + age +
-	           " Status: " + (adopted ? "Adopted" : "Available");
+	           ", Name: " + name +
+	           ", Species: " + species +
+	           ", Age: " + age +
+	           ", Status: " + (adopted ? "Adopted" : "Available");
 	}
 	
 	
