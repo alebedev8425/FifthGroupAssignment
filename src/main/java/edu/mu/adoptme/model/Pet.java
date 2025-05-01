@@ -36,11 +36,11 @@ public abstract class Pet implements Comparable<Pet> {
 	 * Getter and Setter for id field 
 	 * @return int id 
 	 */
-	public int GetID() {
+	public int getId() {
 		return id; 
 	}
 	
-	public void SetId(int id) { 
+	public void setId(int id) { 
 		this.id = id; 
 	}
 	
@@ -53,7 +53,7 @@ public abstract class Pet implements Comparable<Pet> {
 		return name; 
 	}
 	
-	public void SetName(String name) {
+	public void setName(String name) {
 		this.name = name; 
 	}
 	
@@ -66,7 +66,7 @@ public abstract class Pet implements Comparable<Pet> {
 		return type;
 	}
 	
-	public void SetType(String type) { 
+	public void setType(String type) { 
 		this.type = type; 
 	}
 	
