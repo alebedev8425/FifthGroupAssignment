@@ -26,6 +26,14 @@ public abstract class Pet implements Comparable<Pet> {
 	}
 	
 	
+	/**
+	 * allows for sorting
+	 */
+	public int compareTo(Pet other) {
+	    return this.name.compareToIgnoreCase(other.name);
+	}
+	
+	
 	public Pet() {
 		// TODO Auto-generated constructor stub
 	}

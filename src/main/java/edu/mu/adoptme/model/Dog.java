@@ -10,10 +10,6 @@ public class Dog extends Pet {
 		super(id, name, age, species);
 		setAdopted(adopted);
 	}
-	@Override
-	public int compareTo(Pet o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
 
 }
