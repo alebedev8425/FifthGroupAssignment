@@ -11,6 +11,12 @@ import java.util.List;
 
 public class JsonSave {
 
+	/**
+	 * Allows for a list of pets to be saved into a new json file.
+	 * Creates a name based on the day and time and uses GsonBuilder() and PrettyPrinting() 
+	 * to create a json file. 
+	 * @param list of pets
+	 */
 	 public static void savePets(List<Pet> pets) {
 		 
 		 //Getting name for new json file

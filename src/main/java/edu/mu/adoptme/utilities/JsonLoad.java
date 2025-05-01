@@ -10,10 +10,12 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class JsonLoad {
-/**
- * 
- * @return
- */
+
+	/**
+	 * Uses Gson library to read a json file. A list of pets is created from the data stored in
+	 * the json file. Then using type, we use the correct constructor for the animal.
+	 * @return List of pets
+	 */
 	public static List<Pet> loadPets() {
 		Gson gsonloader = new Gson();
 		
