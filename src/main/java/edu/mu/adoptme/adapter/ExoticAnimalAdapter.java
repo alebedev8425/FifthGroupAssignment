@@ -2,6 +2,10 @@ package edu.mu.adoptme.adapter;
 
 import edu.mu.adoptme.codetobeadapted.ExoticAnimal;
 import edu.mu.adoptme.model.Pet;
+/**
+ * Adapter class that makes ExoticAnimal compatible with the Pet system.
+ * Allows exotic animals to be used like regular pets in the adoption app.
+ */
 
 public class ExoticAnimalAdapter extends Pet {
 	

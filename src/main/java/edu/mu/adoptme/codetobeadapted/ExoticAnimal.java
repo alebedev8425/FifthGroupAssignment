@@ -1,5 +1,8 @@
 package edu.mu.adoptme.codetobeadapted;
-
+/**
+ * Represents an exotic animal provided by a third-party system.
+ * This class is not part of the main Pet hierarchy and needs adaptation.
+ */
 public class ExoticAnimal {
 	
 	private String type;
