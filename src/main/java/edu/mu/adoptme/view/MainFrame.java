@@ -44,4 +44,17 @@ public class MainFrame extends JFrame {
   public JButton getDetailsBtn()  { return detailsBtn; }
   public JButton getSaveBtn()     { return saveBtn; }
   public JComboBox<String> getSortCombo() { return sortCombo; }
+  
+  
+  /**
+   * Main starts here
+   * @param args
+   */
+  public static void main(String[] args) {
+	    SwingUtilities.invokeLater(() -> {
+	        MainFrame frame = new MainFrame();
+	        frame.setVisible(true);
+	    });
+	    
+	}
 }
