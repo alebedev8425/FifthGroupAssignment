@@ -122,7 +122,7 @@ public class MainController {
         if (!ok) {
             JOptionPane.showMessageDialog(
                 view,
-                "That pet cannot be adopted (maybe already adopted?).",
+                "That pet cannot be adopted.",
                 "Adopt Error",
                 JOptionPane.WARNING_MESSAGE
             );
@@ -164,7 +164,7 @@ public class MainController {
         JsonSave.savePets(shelter.getAllPets());
         JOptionPane.showMessageDialog(
             view,
-            "Pets have been saved to pets.json in this folder.",
+            "A new file in project with timesate pets.json format has been created to save.",
             "Save Complete",
             JOptionPane.INFORMATION_MESSAGE
         );

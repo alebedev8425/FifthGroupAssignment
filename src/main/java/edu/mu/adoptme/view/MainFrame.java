@@ -16,7 +16,7 @@ public class MainFrame extends JFrame {
   private final JButton detailsBtn = new JButton("View Details");
   private final JButton saveBtn    = new JButton("Save");
   private final JComboBox<String> sortCombo =
-    new JComboBox<>(new String[]{"Name","Age", "Type", "Species"});
+    new JComboBox<>(new String[]{"Name","Age", "Species"});
 
   public MainFrame() {
     super("Adopt Me!");

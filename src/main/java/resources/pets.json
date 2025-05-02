@@ -29,14 +29,6 @@
     "type": "Dog",
     "species": "German Shepherd",
     "age": 5,
-    "adopted": false
-  },
-  {
-    "id": 5,
-    "name": "Alex",
-    "type": "Dog",
-    "species": "Lab",
-    "age": 7,
-    "adopted": false
+    "adopted": true
   }
 ]
