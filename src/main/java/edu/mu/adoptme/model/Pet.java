@@ -17,10 +17,11 @@ public abstract class Pet implements Comparable<Pet> {
 	 * @param age
 	 * @param species
 	 */
-	public Pet(int id, String name, int age, String species) {
+	public Pet(int id, String name, int age, String type, String species) {
 	    this.id = id;
 	    this.name = name;
 	    this.age = age;
+	    this.type = type;
 	    this.species = species;
 	    this.adopted = false; 
 	}

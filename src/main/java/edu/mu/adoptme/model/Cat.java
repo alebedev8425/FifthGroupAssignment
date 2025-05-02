@@ -6,8 +6,8 @@ public class Cat extends Pet{
 		super();
 	}
 	
-	public Cat(int id, String name, int age, String species, boolean adopted) {
-		super(id, name, age, species);
+	public Cat(int id, String name, int age, String type, String species, boolean adopted) {
+		super(id, name, age, type, species);
 		setAdopted(adopted);
 	}
 

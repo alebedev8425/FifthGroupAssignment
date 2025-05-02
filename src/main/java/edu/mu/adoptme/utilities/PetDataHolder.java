@@ -7,8 +7,8 @@ public class PetDataHolder {
 	public int id;
     public String name;
     public int age;
+    public String type;
     public String species;
     public boolean adopted;
-    public String type; 
     
 }

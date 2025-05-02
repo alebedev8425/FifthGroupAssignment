@@ -5,34 +5,45 @@ import edu.mu.adoptme.model.Pet;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
 import java.util.List;
 
 public class JsonSave {
 
-	/**
-	 * Allows for a list of pets to be saved into a new json file.
-	 * Creates a name based on the day and time and uses GsonBuilder() and PrettyPrinting() 
-	 * to create a json file. 
-	 * @param list of pets
-	 */
-	 public static void savePets(List<Pet> pets) {
-		 
-		 //Getting name for new json file
-		 String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-		 String filename = timestamp +"_pets.json"; 
-		 
-		 //Using prettyprint to format the new JSON output 
-		 Gson gson = new GsonBuilder().setPrettyPrinting().create(); 
-		 String jsoncontent = gson.toJson(pets);
-		 
-		 
-		 try (FileWriter writer = new FileWriter(filename)) {
-	            writer.write(jsoncontent);
-	            System.out.println(" Pets saved to: " + filename);
-	        } catch (IOException e) {
-	            System.err.println(" Failed to save pets: " + e.getMessage());
+	private static final Gson GSON = new GsonBuilder()
+	        .setPrettyPrinting()
+	        .create();
+
+	    public static void savePets(List<Pet> pets) {
+	        // Build a path to the source resource file:
+	        Path resourcePath = Paths.get(
+	            System.getProperty("user.dir"),    // your project root
+	            "src", "main", "java", "resources", "pets.json"
+	        );
+
+	        try {
+	            // Convert to JSON
+	            String json = GSON.toJson(pets);
+
+	            // Overwrite the src/main/resources/pets.json file
+	            Files.write(
+	                resourcePath,
+	                json.getBytes(StandardCharsets.UTF_8),
+	                StandardOpenOption.CREATE,
+	                StandardOpenOption.TRUNCATE_EXISTING
+	            );
+
+	            System.out.println("Overwrote resource: " + resourcePath);
+	        } 
+	        catch (IOException e) {
+	            System.err.println("Failed to save pets.json in resources: " + e.getMessage());
 	        }
-	 }
+	    }
 }

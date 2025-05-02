@@ -83,25 +83,30 @@ public class MainController {
         AddPetDialog dlg = new AddPetDialog(view);
         dlg.setVisible(true);
         if (!dlg.isConfirmed()) return;
+        
+        String type = dlg.getPetType();
+        String species = dlg.getPetSpecies();
+
 
         // Create the right subtype
         Pet pet;
-        switch (dlg.getPetType()) {
+        switch (type) {
             case "Dog":
                 pet = new edu.mu.adoptme.model.Dog(
-                    nextId(), dlg.getPetName(), dlg.getPetAge(), "Dog", false
+                    nextId(), dlg.getPetName(), dlg.getPetAge(), type, species, false
                 );
                 break;
             case "Cat":
                 pet = new edu.mu.adoptme.model.Cat(
-                    nextId(), dlg.getPetName(), dlg.getPetAge(), "Cat", false
+                    nextId(), dlg.getPetName(), dlg.getPetAge(), type, species, false
                 );
                 break;
             default:
                 pet = new edu.mu.adoptme.model.Rabbit(
-                    nextId(), dlg.getPetName(), dlg.getPetAge(), "Rabbit", false
+                    nextId(), dlg.getPetName(), dlg.getPetAge(), type, species, false
                 );
         }
+        pet.setType(type);
         shelter.addPet(pet);
         populateTable();
     }
@@ -155,8 +160,14 @@ public class MainController {
     }
 
     private void onSave() {
-        // Use your JsonSave utility to write current list out
+    	// NEW: writes back to ./pets.json next to your JAR
         JsonSave.savePets(shelter.getAllPets());
+        JOptionPane.showMessageDialog(
+            view,
+            "Pets have been saved to pets.json in this folder.",
+            "Save Complete",
+            JOptionPane.INFORMATION_MESSAGE
+        );
     }
     
     

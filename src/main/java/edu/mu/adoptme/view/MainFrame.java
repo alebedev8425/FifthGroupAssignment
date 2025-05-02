@@ -16,7 +16,7 @@ public class MainFrame extends JFrame {
   private final JButton detailsBtn = new JButton("View Details");
   private final JButton saveBtn    = new JButton("Save");
   private final JComboBox<String> sortCombo =
-    new JComboBox<>(new String[]{"Name","Age","Species"});
+    new JComboBox<>(new String[]{"Name","Age", "Type", "Species"});
 
   public MainFrame() {
     super("Adopt Me!");
@@ -60,7 +60,7 @@ public class MainFrame extends JFrame {
 	        MainFrame frame = new MainFrame();
 	        Shelter<Pet> shelter = new Shelter<>();
 	        MainController controller = new MainController(shelter, frame);
-	        controller.init(); // 🧠 THIS is the missing piece!
+	        controller.init(); 
 	        frame.setVisible(true);
 	    });
 	}

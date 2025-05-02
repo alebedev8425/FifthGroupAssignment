@@ -10,6 +10,7 @@ public class PetDetails extends JDialog {
     setLayout(new GridLayout(5,2,5,5));
     add(new JLabel("ID:"));       add(new JLabel(String.valueOf(pet.getId())));
     add(new JLabel("Name:"));     add(new JLabel(pet.getName()));
+    add(new JLabel("Type:"));     add(new JLabel(pet.getType()));
     add(new JLabel("Species:"));  add(new JLabel(pet.getSpecies()));
     add(new JLabel("Age:"));      add(new JLabel(String.valueOf(pet.getAge())));
     add(new JLabel("Adopted:"));  add(new JLabel(pet.isAdopted()?"Yes":"No"));

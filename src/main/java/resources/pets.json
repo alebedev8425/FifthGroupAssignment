@@ -1,10 +1,10 @@
 [
   {
-    "id": 1,
-    "name": "Buddy",
-    "type": "Dog",
-    "species": "Golden Retriever",
-    "age": 3,
+    "id": 3,
+    "name": "Thumper",
+    "type": "Rabbit",
+    "species": "Dutch",
+    "age": 1,
     "adopted": false
   },
   {
@@ -16,11 +16,11 @@
     "adopted": false
   },
   {
-    "id": 3,
-    "name": "Thumper",
-    "type": "Rabbit",
-    "species": "Dutch",
-    "age": 1,
+    "id": 1,
+    "name": "Buddy",
+    "type": "Dog",
+    "species": "Golden Retriever",
+    "age": 3,
     "adopted": false
   },
   {
@@ -29,6 +29,14 @@
     "type": "Dog",
     "species": "German Shepherd",
     "age": 5,
+    "adopted": false
+  },
+  {
+    "id": 5,
+    "name": "Alex",
+    "type": "Dog",
+    "species": "Lab",
+    "age": 7,
     "adopted": false
   }
 ]
