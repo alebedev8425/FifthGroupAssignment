@@ -76,7 +76,7 @@ public class MainController {
         view.getRemoveBtn().addActionListener(e -> onRemove());
         view.getDetailsBtn().addActionListener(e -> onViewDetails());
         view.getSaveBtn().addActionListener(e -> onSave());
-        // view.getSortCombo().addActionListener(e -> onSort());
+        view.getSortCombo().addActionListener(e -> onSort());
     }
 
     private void onAdd() {
@@ -159,7 +159,7 @@ public class MainController {
         JsonSave.savePets(shelter.getAllPets());
     }
     
-    /*
+    
 
     private void onSort() {
         String key = (String) view.getSortCombo().getSelectedItem();
@@ -176,7 +176,7 @@ public class MainController {
         populateTable();
     }
     
-    /*
+    
 
     /** 
      * Simple ID generator for newly added pets. 

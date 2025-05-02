@@ -1,6 +1,11 @@
 package edu.mu.adoptme.view;
 
 import javax.swing.*;
+
+import edu.mu.adoptme.controller.MainController;
+import edu.mu.adoptme.model.Pet;
+import edu.mu.adoptme.model.Shelter;
+
 import java.awt.*;
 
 public class MainFrame extends JFrame {
@@ -53,8 +58,10 @@ public class MainFrame extends JFrame {
   public static void main(String[] args) {
 	    SwingUtilities.invokeLater(() -> {
 	        MainFrame frame = new MainFrame();
+	        Shelter<Pet> shelter = new Shelter<>();
+	        MainController controller = new MainController(shelter, frame);
+	        controller.init(); // 🧠 THIS is the missing piece!
 	        frame.setVisible(true);
 	    });
-	    
 	}
 }

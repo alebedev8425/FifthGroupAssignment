@@ -1,0 +1,30 @@
+[
+  {
+    "id": 3,
+    "name": "Thumper",
+    "species": "Dutch",
+    "age": 1,
+    "adopted": true
+  },
+  {
+    "id": 4,
+    "name": "Shadow",
+    "species": "German Shepherd",
+    "age": 5,
+    "adopted": true
+  },
+  {
+    "id": 1,
+    "name": "Buddy",
+    "species": "Golden Retriever",
+    "age": 3,
+    "adopted": true
+  },
+  {
+    "id": 2,
+    "name": "Whiskers",
+    "species": "Siamese",
+    "age": 2,
+    "adopted": true
+  }
+]

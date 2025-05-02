@@ -1,6 +1,8 @@
 package edu.mu.adoptme.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Shelter<T extends Pet> {
@@ -91,6 +93,15 @@ public class Shelter<T extends Pet> {
 			}
 		}
 		return availablePets; 
+	}
+	
+	
+	public void sort(Comparator<Pet> comparator) {
+	    if (comparator == null) {
+	        Collections.sort(pets); // default: by name
+	    } else {
+	        pets.sort(comparator);
+	    }
 	}
 	
 	
