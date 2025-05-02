@@ -9,27 +9,19 @@ import edu.mu.adoptme.model.Pet;
 
 public class ExoticAnimalAdapter extends Pet {
 	
-	private static int idCounter = 1000;
-    private ExoticAnimal exoticAnimal;
+	 private static int idCounter = 1_000; // start high to avoid colliding with normal IDs
+	    private final ExoticAnimal exotic;
 
-    public ExoticAnimalAdapter(ExoticAnimal exoticAnimal) {
-        super(
-        	idCounter++,
-            exoticAnimal.getUniqueId(),       // name 
-            exoticAnimal.getYearsOld(),       // age
-            exoticAnimal.getType()            // species
-        );
-        this.exoticAnimal = exoticAnimal;
-        this.setType("Exotic");
-    }
-    
-    @Override
-    public String toString() {
-    	return "ExoticAnimalAdapter{"+
-    			"name=' " + getName() + '\''+
-    			", age=" + getAge() +
-    			", species='" + getSpecies() + '\'' +
-    			", adopted= " + isAdopted() +
-    			'}';
-    }
+	    public ExoticAnimalAdapter(ExoticAnimal exotic) {
+	        // super(id, name, age, species)
+	        super(idCounter++,
+	              exotic.getAnimalName(),   // name
+	              exotic.getYearsOld(), 
+	              exotic.getCategory(),// age
+	              exotic.getSubSpecies()    // species/breed
+	        );
+	        this.exotic = exotic;
+	        // use category (“Dog”, “Cat”, “Rabbit”, or your exotic category) as the Pet type
+	        setType(exotic.getCategory());
+	    }
 }
