@@ -160,7 +160,6 @@ public class MainController {
     }
 
     private void onSave() {
-    	// NEW: writes back to ./pets.json next to your JAR
         JsonSave.savePets(shelter.getAllPets());
         JOptionPane.showMessageDialog(
             view,
