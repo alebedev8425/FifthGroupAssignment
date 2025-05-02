@@ -48,7 +48,7 @@ public class MainController {
 
         // 2) Exotic pets
         try (InputStreamReader reader = new InputStreamReader(
-                getClass().getResourceAsStream("/exotic_pets.json"))) {
+                getClass().getResourceAsStream("/exotic_animals.json"))) {
             ExoticAnimal[] raw = gson.fromJson(reader, ExoticAnimal[].class);
             for (ExoticAnimal ea : raw) {
                 shelter.addPet(new ExoticAnimalAdapter(ea));
