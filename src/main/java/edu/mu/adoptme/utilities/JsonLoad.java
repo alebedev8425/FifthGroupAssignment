@@ -19,48 +19,51 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class JsonLoad {
-
-	private static final String EXTERNAL_FILENAME = "pets.json";
-    private static final String BUNDLED_PATH      = "/pets.json";
     private static final Gson GSON = new Gson();
 
+	/**
+     * Reads pets.json **directly** from src/main/resources so that
+     * any edits you make to that file (via JsonSave) will be loaded.
+     */
     public static List<Pet> loadPets() {
-        try {
-            Path external = Paths.get(EXTERNAL_FILENAME);
-            // 1) If no external file, copy the bundled resource out to cwd
-            if (Files.notExists(external)) {
-                try (InputStream in = JsonLoad.class.getResourceAsStream(BUNDLED_PATH)) {
-                    if (in == null) {
-                        throw new FileNotFoundException("Bundled pets.json not found in JAR!");
-                    }
-                    Files.copy(in, external);
-                }
-            }
+        // Build the path to the *source* resource file:
+        Path resourcePath = Paths.get(
+            System.getProperty("user.dir"),
+            "src", "main", "java", "resources", "pets.json"
+        );
 
-            // 2) Read from the external file
-            try (Reader reader = Files.newBufferedReader(external, StandardCharsets.UTF_8)) {
-                Type listType = new TypeToken<List<PetDataHolder>>() {}.getType();
-                List<PetDataHolder> holders = GSON.fromJson(reader, listType);
-                List<Pet> pets = new ArrayList<>();
-                for (PetDataHolder d : holders) {
-                    switch (d.type) {
-                        case "Dog":
-                            pets.add(new Dog(d.id, d.name, d.age, d.type, d.species, d.adopted));
-                            break;
-                        case "Cat":
-                            pets.add(new Cat(d.id, d.name, d.age, d.type, d.species, d.adopted));
-                            break;
-                        case "Rabbit":
-                            pets.add(new Rabbit(d.id, d.name, d.age, d.type, d.species, d.adopted));
-                            break;
-                        default:
-}
+        try {
+            // Read the entire file
+            String json = Files.readString(resourcePath, StandardCharsets.UTF_8);
+
+            // Parse into PetDataHolder
+            Type listType = TypeToken.getParameterized(List.class, PetDataHolder.class).getType();
+            List<PetDataHolder> holders = GSON.fromJson(json, listType);
+
+            // Convert to real Pet objects
+            List<Pet> pets = new ArrayList<>();
+            for (PetDataHolder d : holders) {
+                Pet pet = null;
+                switch (d.type) {
+                    case "Dog":
+                        pet = new Dog(d.id, d.name, d.age, d.type, d.species, d.adopted);
+                        break;
+                    case "Cat":
+                        pet = new Cat(d.id, d.name, d.age, d.type, d.species, d.adopted);
+                        break;
+                    case "Rabbit":
+                        pet = new Rabbit(d.id, d.name, d.age, d.type, d.species, d.adopted);
+                        break;
+                    default:
+                        System.err.println("Unknown type: " + d.type);
+                        continue;
                 }
-                return pets;
+                pet.setType(d.type);
+                pets.add(pet);
             }
+            return pets;
         } catch (IOException e) {
-            throw new UncheckedIOException("Failed to load pets.json", e);
+            throw new UncheckedIOException("Failed to read pets.json from resources", e);
         }
     }
-
 }
