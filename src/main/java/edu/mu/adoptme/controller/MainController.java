@@ -43,10 +43,10 @@ public class MainController {
 
     /** Loads regular pets via JsonLoad and wraps & loads exotic pets via Gson+Adapter. */
     private void loadPets() {
-        // 1) Regular pets
+        // for regular pets
         shelter.getAllPets().addAll(JsonLoad.loadPets());
 
-        // 2) Exotic pets
+       //for exotic pets 
         try (InputStreamReader reader = new InputStreamReader(
                 getClass().getResourceAsStream("/exotic_animals.json"))) {
             ExoticAnimal[] raw = gson.fromJson(reader, ExoticAnimal[].class);
