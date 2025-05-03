@@ -8,12 +8,35 @@ public class PetTableModel extends AbstractTableModel {
     private final List<Pet> pets;
     private final String[] cols = {"ID","Name","Type","Species","Age","Adopted"};
 
+    /**
+     * constructs a table using the given list of pets 
+     * @param pets
+     */
     public PetTableModel(List<Pet> pets) { this.pets = pets; }
 
+    /**
+     * returns the count of rows
+     */
     @Override public int getRowCount()    { return pets.size(); }
+    
+    /**
+     * returns the count of columns 
+     */
     @Override public int getColumnCount() { return cols.length; }
+    
+    /**
+     * returns the name of the column 
+     */
     @Override public String getColumnName(int c) { return cols[c]; }
 
+    
+    /**
+     * 
+     *returns the value to be displayed
+     * @param int row 
+     * @param int col
+     * @return corresponding field 
+     */
     @Override
     public Object getValueAt(int row, int col) {
         Pet p = pets.get(row);

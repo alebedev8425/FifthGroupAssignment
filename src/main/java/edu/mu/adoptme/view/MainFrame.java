@@ -7,7 +7,10 @@ import edu.mu.adoptme.model.Pet;
 import edu.mu.adoptme.model.Shelter;
 
 import java.awt.*;
-
+/**
+ * creates the main window for the application 
+ * Displays all pets as well as the necessary buttons 
+ */
 public class MainFrame extends JFrame {
   private final JTable petTable = new JTable();
   private final JButton addBtn     = new JButton("Add");
@@ -41,7 +44,10 @@ public class MainFrame extends JFrame {
     setLocationRelativeTo(null);
   }
 
-  // Expose getters so controller can wire listeners & table model
+  /**
+   * Getters for the controllers 
+   * @return respective button components 
+   */
   public JTable getPetTable()     { return petTable; }
   public JButton getAddBtn()      { return addBtn; }
   public JButton getAdoptBtn()    { return adoptBtn; }

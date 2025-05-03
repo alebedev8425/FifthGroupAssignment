@@ -95,7 +95,10 @@ public class Shelter<T extends Pet> {
 		return availablePets; 
 	}
 	
-	
+	/**
+	 * allows sorting for pets 
+	 * @param comparator
+	 */
 	public void sort(Comparator<Pet> comparator) {
 	    if (comparator == null) {
 	        Collections.sort(pets); // default: by name

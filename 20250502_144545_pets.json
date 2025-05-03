@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Buddy",
+    "species": "Golden Retriever",
+    "age": 3,
+    "adopted": false
+  },
+  {
+    "id": 2,
+    "name": "Whiskers",
+    "species": "Siamese",
+    "age": 2,
+    "adopted": false
+  },
+  {
+    "id": 3,
+    "name": "Thumper",
+    "species": "Dutch",
+    "age": 1,
+    "adopted": false
+  },
+  {
+    "id": 4,
+    "name": "Shadow",
+    "species": "German Shepherd",
+    "age": 5,
+    "adopted": false
+  },
+  {
+    "id": 5,
+    "name": "ShaggyDog",
+    "species": "Dog",
+    "age": 56,
+    "adopted": false
+  }
+]

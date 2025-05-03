@@ -4,7 +4,13 @@ import javax.swing.*;
 import edu.mu.adoptme.model.Pet;
 import java.awt.*;
 
+
 public class PetDetails extends JDialog {
+	/**
+	 * allows for a modal dialog to be constructed which displays information about a pet. 
+	 * @param owner
+	 * @param pet
+	 */
   public PetDetails(JFrame owner, Pet pet) {
     super(owner, "Pet Details", true);
     setLayout(new GridLayout(5,2,5,5));

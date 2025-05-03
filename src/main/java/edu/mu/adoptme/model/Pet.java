@@ -29,12 +29,15 @@ public abstract class Pet implements Comparable<Pet> {
 	
 	/**
 	 * allows for sorting
+	 * @param Pet
 	 */
 	public int compareTo(Pet other) {
 	    return this.name.compareToIgnoreCase(other.name);
 	}
 	
-	
+	/**
+	 * default constructor 
+	 */
 	public Pet() {
 		// TODO Auto-generated constructor stub
 	}
@@ -116,6 +119,9 @@ public abstract class Pet implements Comparable<Pet> {
 		this.adopted = adopted;
 	}
 	
+	/**
+	 * to string method 
+	 */
 	@Override
 	public String toString() {
 	    return "ID: " + id +

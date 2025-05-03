@@ -28,7 +28,7 @@ public class JsonSave {
 	        DateTimeFormatter.ofPattern("yyyyMMdd HHmmssSSS");
 
 	    /**
-	     * Creates a *new* timestamped JSON file (never overwrites).
+	     * Creates a new timestamped JSON file 
 	     * If a rare name collision occurs, appends a UUID.
 	     */
 	    public static void savePets(List<Pet> pets) {
@@ -39,7 +39,7 @@ public class JsonSave {
 
 	        String json = GSON.toJson(pets);
 	        try {
-	            // 2) Attempt to create new file only
+	            //attempting to create a new file 
 	            Files.write(
 	                out,
 	                json.getBytes(StandardCharsets.UTF_8),
