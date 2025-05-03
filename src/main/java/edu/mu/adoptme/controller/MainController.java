@@ -111,6 +111,10 @@ public class MainController {
         populateTable();
     }
 
+    /**
+     * This runs when you try to adopt a pet.
+     * It checks if one is selected and tries to adopt it.
+     */
     private void onAdopt() {
         int row = view.getPetTable().getSelectedRow();
         if (row < 0) {
@@ -130,6 +134,10 @@ public class MainController {
         populateTable();
     }
 
+    /**
+     * Happens when you want to remove a pet from the list.
+     * Makes sure one is selected and removes it using its ID.
+     */
     private void onRemove() {
         int row = view.getPetTable().getSelectedRow();
         if (row < 0) {
@@ -149,6 +157,10 @@ public class MainController {
         populateTable();
     }
 
+    /**
+     * This shows more info about the pet you clicked.
+     * Opens a new window with the pet’s details.
+     */
     private void onViewDetails() {
         int row = view.getPetTable().getSelectedRow();
         if (row < 0) {
@@ -159,6 +171,10 @@ public class MainController {
         new PetDetails(view, pet).setVisible(true);
     }
 
+    /**
+     * This saves the pet list to a file.
+     * It uses some JSON format and tells you when it's done.
+     */
     private void onSave() {
         JsonSave.savePets(shelter.getAllPets());
         JOptionPane.showMessageDialog(
@@ -168,9 +184,11 @@ public class MainController {
             JOptionPane.INFORMATION_MESSAGE
         );
     }
-    
-    
 
+    /**
+     * This handles sorting pets.
+     * Picks what to sort by based on the dropdown choice.
+     */
     private void onSort() {
         String key = (String) view.getSortCombo().getSelectedItem();
         switch (key) {
@@ -185,7 +203,7 @@ public class MainController {
         }
         populateTable();
     }
-    
+
     
 
     /** 
