@@ -49,11 +49,17 @@ public class MainFrame extends JFrame {
    * @return respective button components 
    */
   public JTable getPetTable()     { return petTable; }
+  
   public JButton getAddBtn()      { return addBtn; }
+  
   public JButton getAdoptBtn()    { return adoptBtn; }
+  
   public JButton getRemoveBtn()   { return removeBtn; }
+  
   public JButton getDetailsBtn()  { return detailsBtn; }
+  
   public JButton getSaveBtn()     { return saveBtn; }
+  
   public JComboBox<String> getSortCombo() { return sortCombo; }
   
   
