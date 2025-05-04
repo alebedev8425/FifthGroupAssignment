@@ -101,7 +101,7 @@ public class Shelter<T extends Pet> {
 	 */
 	public void sort(Comparator<Pet> comparator) {
 	    if (comparator == null) {
-	        Collections.sort(pets); // default: by name
+	        Collections.sort(pets); 
 	    } else {
 	        pets.sort(comparator);
 	    }

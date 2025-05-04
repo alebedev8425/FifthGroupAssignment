@@ -18,10 +18,10 @@ public class ExoticAnimalAdapter extends Pet {
 	              exotic.getAnimalName(),   // name
 	              exotic.getYearsOld(), 
 	              exotic.getCategory(),// age
-	              exotic.getSubSpecies()    // species/breed
+	              exotic.getSubSpecies()    // species
 	        );
 	        this.exotic = exotic;
-	        // use category (“Dog”, “Cat”, “Rabbit”, or your exotic category) as the Pet type
+	        
 	        setType(exotic.getCategory());
 	    }
 }

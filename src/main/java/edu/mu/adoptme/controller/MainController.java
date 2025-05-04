@@ -88,7 +88,7 @@ public class MainController {
         String species = dlg.getPetSpecies();
 
 
-        // Create the right subtype
+        /** Create the right subtype*/
         Pet pet;
         switch (type) {
             case "Dog":

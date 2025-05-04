@@ -32,14 +32,14 @@ public class JsonSave {
 	     * If a rare name collision occurs, appends a UUID.
 	     */
 	    public static void savePets(List<Pet> pets) {
-	        // 1) Build base filename with millis
+	        //Build base filename with millis
 	        String base = LocalDateTime.now().format(format);
 	        String filename = base + " pets.json";
 	        Path out = Paths.get(filename);
 
 	        String json = GSON.toJson(pets);
 	        try {
-	            //attempting to create a new file 
+	            //attempts to create a new file 
 	            Files.write(
 	                out,
 	                json.getBytes(StandardCharsets.UTF_8),

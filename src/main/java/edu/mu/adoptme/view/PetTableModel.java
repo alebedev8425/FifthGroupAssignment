@@ -43,8 +43,8 @@ public class PetTableModel extends AbstractTableModel {
         switch (col) {
             case 0: return p.getId();
             case 1: return p.getName();
-            case 2: return p.getType();      // broad category
-            case 3: return p.getSpecies();   // specific breed
+            case 2: return p.getType();    
+            case 3: return p.getSpecies();  
             case 4: return p.getAge();
             case 5: return p.isAdopted();
             default: return "";
