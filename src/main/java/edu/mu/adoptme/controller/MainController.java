@@ -15,10 +15,8 @@ import edu.mu.adoptme.view.PetDetails;
 import edu.mu.adoptme.view.PetTableModel;
 
 import javax.swing.*;
-import java.awt.event.ActionListener;
 import java.io.InputStreamReader;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+
 
 /**
  * Controller for the Adopt Me! app.
